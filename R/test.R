@@ -69,23 +69,23 @@ myfunc2()
 
 f<-myfunc()
 
-#' Dataframe
+#' path
 #'
 #' @description
-#' `Dataframe` returns a DataFrame with revenue data
+#' `path` returns a DataFrame with revenue data
 #'
 #' @details
 #' details
 #' @keywords function
 #' @return Object of \code{\link{dataframe}} with revenue data
-#' @examples df<-Dataframe()
+#' @examples df<-path()
 #' @include zzz.R
 #' @export
 #'
-Dataframe <- function(){
-  datafile=system.file("extdata", "Datensatz_Unternehmen.xlsx",package = "RevenueAnalysisR", mustWork = TRUE,full.names = TRUE)
-  rlang::check_installed("readxl", reason = "to use `read_excel`")
-  excel.file<-readxl::read_excel(Source)
-  return(as.data.frame(excel.file))
+path <- function(){
+  return (system.file('extdata','Datensatz_Unternehmen.xlsx', package = 'RevenueAnalysisR',mustWork = TRUE,full.names = TRUE))
+  #rlang::check_installed("readxl", reason = "to use `read_excel`")
+  #excel.file<-readxl::read_excel(Source)
+  #return(as.data.frame(excel.file))
   }
 
