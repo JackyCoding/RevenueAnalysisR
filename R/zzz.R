@@ -27,7 +27,7 @@
   if (any(toset))
     options(op.devtools[toset])
 
-  packages.needed<- c("devtools","readxl","DBI" )#"roxygen2","rmarkdown")
+  packages.needed<- c("devtools","readxl","DBI",'RSQLite' )#"roxygen2","rmarkdown")
 
   # helper
   installer <- function(pkg){
@@ -45,6 +45,9 @@
 
   assign("package.rawdata","Datensatz_Unternehmen.xlsx", envir = topenv())
   assign('package.name',"RevenueAnalysisR", envir = .GlobalEnv)
+
+  msg <- paste("Loading", package.name,'\n')
+  cat(msg)
 
   invisible()
 }

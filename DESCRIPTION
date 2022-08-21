@@ -15,6 +15,7 @@ Imports:
     rlang (>= 1.0.0)
 Suggests:
     RSQLite,
+    dplyr,
     knitr,
     rmarkdown
 URL: https://github.com/JackyCoding/RevenueAnalysisR

@@ -67,8 +67,6 @@ myfunc2 <- function(W){
 }
 myfunc2()
 
-f<-myfunc()
-
 #' path
 #'
 #' @description
@@ -87,5 +85,25 @@ path <- function(){
   #rlang::check_installed("readxl", reason = "to use `read_excel`")
   #excel.file<-readxl::read_excel(Source)
   #return(as.data.frame(excel.file))
-  }
+}
+
+#' dataframe
+#'
+#' @description
+#' `path` returns a DataFrame with revenue data
+#'
+#' @details
+#' details
+#' @keywords function
+#' @return Object of \code{\link{dataframe}} with revenue data
+#' @examples df<-path()
+#' @include zzz.R
+#' @export
+#'
+dataframe <- function(){
+  cnn <- DBI::dbConnect(RSQLite::SQLite(),"sysdata/revenue.db")
+  df<-DBI::dbReadTable(cnn,'REVENUE')
+  DBI::dbDisconnect(cnn)
+  return (df)
+}
 
