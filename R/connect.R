@@ -3,7 +3,6 @@ connectDB <- function(user = Sys.getenv("DB_USERNAME"),
                        pass = Sys.getenv("DB_PASSWORD", rstudioapi::askForPassword())) {
 
   if (is.null(pkg.db.env$cnn)) {
-    cat("if connect")
     pkg.db.env$cnn <- DBI::dbConnect(DB_DRIVER, DB_DBNAME)
   } #else {
     # Closing the existing connection if already open
