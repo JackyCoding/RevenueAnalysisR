@@ -13,10 +13,6 @@ if(!(DBI::dbExistsTable(cnn,'REVENUE'))){
   DBI::dbWriteTable(cnn, 'REVENUE',  revenue)
 }
 
-#Table<-dbListTables(cnn)
-#dbListFields( cnn, Table)
-
-#dbGetQuery(cnn, 'SELECT ROWID,Lieferort,SUM(Umsatz_A) FROM Revenue GROUP BY Lieferort')
 DBI::dbDisconnect(cnn)
 usethis::use_data(revenue, overwrite = TRUE)
 

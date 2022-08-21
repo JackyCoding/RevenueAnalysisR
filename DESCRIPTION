@@ -33,3 +33,4 @@ Collate:
     'sql.R'
     'summary.R'
     'test.R'
+    'utils.R'

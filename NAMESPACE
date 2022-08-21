@@ -2,6 +2,7 @@
 
 export(dataframe)
 export(fetch)
+export(fetchAll)
 export(myfunc)
 export(myfunc2)
 export(path)
