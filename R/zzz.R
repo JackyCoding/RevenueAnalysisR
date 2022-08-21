@@ -11,7 +11,6 @@
 }
 
 pkg.env <-NULL
-
 .onLoad <- function(libname, pkgname) {
 
   #db connection
