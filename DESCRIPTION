@@ -14,7 +14,7 @@ Imports:
     readxl (>= 1.0.0),
     rlang (>= 1.0.0),
     RSQLite (>= 1.0.0),
-    dplyr (>= 1.0.0)
+    dplyr (>= 1.0.0),
 Suggests:
     knitr,
     rmarkdown
