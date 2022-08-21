@@ -19,7 +19,6 @@ installer <- function(pkg){
   #vector Indexing using Logical vector
   packages.not.installed<- pkg[!packages.found]
   for(p in packages.not.installed) {
-    print(p)
     install.packages(p, dependencies = TRUE,upgrade = TRUE)
   }
   sapply(pkg, require, character.only = TRUE)
