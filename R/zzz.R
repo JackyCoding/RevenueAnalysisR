@@ -11,6 +11,12 @@
 }
 
 .onLoad <- function(libname, pkgname) {
+  #set up db connection
+  reg.finalizer(
+    e = DB_ENV,
+    f = closeConnection,
+    onexit = TRUE
+  )
 
   op <- options()
   op.devtools <- list(
@@ -46,8 +52,26 @@
   assign("package.rawdata","Datensatz_Unternehmen.xlsx", envir = topenv())
   assign('package.name',"RevenueAnalysisR", envir = .GlobalEnv)
 
+  connectDB()
   msg <- paste("Loading", package.name,'\n')
   cat(msg)
 
   invisible()
 }
+
+.onUnload <- function(libpath) {
+  closeConnection(DB_ENV)
+}
+
+closeConnection <- function(e, connection = "cnn") {
+  # Want to be as defensive as possible, so if there is no connection, we don't want to test it
+  if (connection %in% ls(e)) {
+    cnn <- get(connection, envir = e)
+    # If connection has closed for any other reason, we don't want the function to error
+    if (DBI::dbIsValid(cnn)) {
+      DBI::dbDisconnect(cnn)
+    }
+  }
+
+}
+

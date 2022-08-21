@@ -9,10 +9,10 @@ revenue<- readxl::read_excel(path)
 
 # create database
 cnn <- DBI::dbConnect(RSQLite::SQLite(),"sysdata/revenue.db")
-#dbListTables(cnn)
 if(!(DBI::dbExistsTable(cnn,'REVENUE'))){
   DBI::dbWriteTable(cnn, 'REVENUE',  revenue)
 }
+
 #Table<-dbListTables(cnn)
 #dbListFields( cnn, Table)
 
