@@ -10,10 +10,10 @@ License: What license is it under?
 Depends:
     R (>= 3.0.0)
 Imports: 
-    DBI (>= 1.0.0),
     readxl (>= 1.0.0),
     rlang (>= 1.0.0),
-    RSQLite (>= 1.0.0),
+    RSQLite(>= 2.2.4),
+    DBI,
     dplyr (>= 1.0.0),
     magrittr
 Suggests:
