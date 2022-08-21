@@ -40,6 +40,7 @@
   cat("connect")
   connectDB()
   cat("connect complete")
+
   msg <- paste("Loading", package.name,'\n')
   cat(msg)
   invisible()
