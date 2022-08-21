@@ -11,12 +11,6 @@
 }
 
 .onLoad <- function(libname, pkgname) {
-  #set up db connection
-  reg.finalizer(
-    e = DB_ENV,
-    f = closeConnection,
-    onexit = TRUE
-  )
 
   op <- options()
   op.devtools <- list(
@@ -52,10 +46,16 @@
   assign("package.rawdata","Datensatz_Unternehmen.xlsx", envir = topenv())
   assign('package.name',"RevenueAnalysisR", envir = .GlobalEnv)
 
+  #db connection
+  reg.finalizer(
+    e = DB_ENV,
+    f = closeConnection,
+    onexit = TRUE
+  )
   connectDB()
+
   msg <- paste("Loading", package.name,'\n')
   cat(msg)
-
   invisible()
 }
 

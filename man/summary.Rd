@@ -10,10 +10,10 @@ summary()
 Object of \code{\link{dataframe}} with revenue data
 }
 \description{
-\code{path} returns a DataFrame with key data
+\code{path} returns a Dataframe with key data
 }
 \details{
-details
+details ...
 }
 \examples{
 df<-summary()

@@ -1,10 +1,9 @@
 #' summary
 #'
 #' @description
-#' `path` returns a DataFrame with key data
-#'
+#' `path` returns a Dataframe with key data
 #' @details
-#' details
+#' details ...
 #' @keywords function
 #' @return Object of \code{\link{dataframe}} with revenue data
 #' @examples df<-summary()
@@ -13,8 +12,8 @@
 #'
 summary <- function(){
 
-  cnn <- DBI::dbConnect(RSQLite::SQLite(),"sysdata/revenue.db")
-  tbl<-dplyr::tbl(cnn,'REVENUE')
+  #cnn <- DBI::dbConnect(RSQLite::SQLite(),"sysdata/revenue.db")
+  tbl<-dplyr::tbl(DB_ENV$cnn,'REVENUE')
 
   descriptiveAnalysis <-list(
     min=~min(.x,na.rm=TRUE),
@@ -28,7 +27,7 @@ summary <- function(){
     dplyr::summarise(across(c(Umsatz_A,Umsatz_B),descriptiveAnalysis,.names = "{.fn}.{.col}"), .groups = 'drop') %>%
     dplyr::arrange(desc(Lieferort),.by_group =TRUE ) %>%
     as.data.frame()
-  DBI::dbDisconnect(cnn)
+  #DBI::dbDisconnect(cnn)
   return (df)
 
 }
