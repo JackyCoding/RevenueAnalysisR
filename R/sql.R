@@ -13,5 +13,5 @@
 #' @include zzz.R
 #' @export
 fetch <- function(sql, ...) {
-  return (DBI::dbGetQuery(conn = DB_ENV$cnn, statement = sql, ...))
+  return (DBI::dbGetQuery(conn = pkg.db.env$cnn, statement = sql, ...))
 }

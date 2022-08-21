@@ -13,7 +13,7 @@
 summary <- function(){
 
   #cnn <- DBI::dbConnect(RSQLite::SQLite(),"sysdata/revenue.db")
-  tbl<-dplyr::tbl(DB_ENV$cnn,'REVENUE')
+  tbl<-dplyr::tbl(pkg.db.env$cnn,'REVENUE')
 
   descriptiveAnalysis <-list(
     min=~min(.x,na.rm=TRUE),

@@ -13,5 +13,5 @@
 #' @include zzz.R
 #' @export
 fetchAll <- function() {
-  return (DBI::dbGetQuery(conn = DB_ENV$cnn, statement = fetch("SELECT * FROM REVENUE"),...))
+  return (DBI::dbGetQuery(conn = pkg.db.env$cnn, statement = fetch("SELECT * FROM REVENUE"),...))
 }

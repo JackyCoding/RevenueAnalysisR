@@ -10,11 +10,18 @@
   )
 }
 
+pkg.env <-NULL
+pkg.db.env <-NULL
+
 .onLoad <- function(libname, pkgname) {
+
+  pkg.db.env <- new.env()
+  pkg.db.env$driver <- RSQLite::SQLite()
+  pkg.db.env$path <- "sysdata/revenue.db"
 
   #db connection
   reg.finalizer(
-    e = DB_ENV,
+    e = pkg.db.env,
     f = closeConnection,
     onexit = TRUE
   )
@@ -42,7 +49,7 @@
 }
 
 .onUnload <- function(libpath) {
-  closeConnection(DB_ENV)
+  closeConnection(pkg.db.env)
 }
 
 closeConnection <- function(e, connection = "cnn") {
