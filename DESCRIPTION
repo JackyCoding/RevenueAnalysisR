@@ -30,6 +30,7 @@ Collate:
     'data.R'
     'hello.R'
     'zzz.R'
+    'installer.R'
     'sql.R'
     'summary.R'
     'test.R'

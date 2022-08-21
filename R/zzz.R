@@ -27,22 +27,6 @@
   if (any(toset))
     options(op.devtools[toset])
 
-  packages.needed<- c("devtools","readxl","DBI",'RSQLite','dplyr')#"roxygen2","rmarkdown")
-
-  # helper
-  installer <- function(pkg){
-    #slice matrix by column
-    packages.installed<- installed.packages()[,"Package"]
-    #logical vector
-    packages.found<- pkg %in% packages.installed
-    #vector Indexing using Logical vector
-    packages.not.installed<- pkg[!packages.found]
-    for(p in packages.not.installed) install.packages(p, dependencies = TRUE,upgrade = TRUE)
-    sapply(pkg, require, character.only = TRUE)
-  }
-
-  installer(packages.needed)
-
   assign("package.rawdata","Datensatz_Unternehmen.xlsx", envir = topenv())
   assign('package.name',"RevenueAnalysisR", envir = .GlobalEnv)
 
