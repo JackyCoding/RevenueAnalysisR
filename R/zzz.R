@@ -37,8 +37,9 @@
   assign("package.rawdata","Datensatz_Unternehmen.xlsx", envir = topenv())
   assign('package.name',"RevenueAnalysisR", envir = .GlobalEnv)
 
-  connectDB()
-
+  cat("connect")
+  #connectDB()
+  cat("connect complete")
   msg <- paste("Loading", package.name,'\n')
   cat(msg)
   invisible()
