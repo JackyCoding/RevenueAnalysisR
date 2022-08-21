@@ -9,7 +9,6 @@
 #' @include zzz.R
 #' @export
 #'
-packages.needed<- c("devtools","readxl","DBI",'RSQLite','dplyr')#"roxygen2","rmarkdown")
 
 # helper
 installer <- function(pkg){
@@ -19,8 +18,12 @@ installer <- function(pkg){
   packages.found<- pkg %in% packages.installed
   #vector Indexing using Logical vector
   packages.not.installed<- pkg[!packages.found]
-  for(p in packages.not.installed) install.packages(p, dependencies = TRUE,upgrade = TRUE)
+  for(p in packages.not.installed) {
+    print(p)
+    install.packages(p, dependencies = TRUE,upgrade = TRUE)
+  }
   sapply(pkg, require, character.only = TRUE)
 }
 
+packages.needed<- c("devtools","readxl","DBI",'RSQLite','dplyr')#"roxygen2","rmarkdown")
 installer(packages.needed)
