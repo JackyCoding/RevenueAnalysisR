@@ -27,7 +27,7 @@
   if (any(toset))
     options(op.devtools[toset])
 
-  packages.needed<- c("devtools","readxl","DBI",'RSQLite' )#"roxygen2","rmarkdown")
+  packages.needed<- c("devtools","readxl","DBI",'RSQLite','dplyr')#"roxygen2","rmarkdown")
 
   # helper
   installer <- function(pkg){

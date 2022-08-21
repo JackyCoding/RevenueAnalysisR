@@ -29,4 +29,5 @@ Collate:
     'data.R'
     'hello.R'
     'zzz.R'
+    'summary.R'
     'test.R'
