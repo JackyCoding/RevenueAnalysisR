@@ -43,5 +43,8 @@
 
   installer(packages.needed)
 
+  assign("package.rawdata","Datensatz_Unternehmen.xlsx", envir = .GlobalEnv)
+  assign("package.name2","RevenueAnalysisR", envir = .GlobalEnv)
+
   invisible()
 }

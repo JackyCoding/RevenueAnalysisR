@@ -66,3 +66,26 @@ myfunc2 <- function(W){
   return(invisible())
 }
 myfunc2()
+
+f<-myfunc()
+
+#' Dataframe
+#'
+#' @description
+#' `Dataframe` returns a DataFrame with revenue data
+#'
+#' @details
+#' details
+#' @keywords function
+#' @return Object of \code{\link{dataframe}} with revenue data
+#' @examples df<-Dataframe()
+#' @include zzz.R
+#' @export
+#'
+Dataframe <- function(){
+  datafile=system.file("extdata", "Datensatz_Unternehmen.xlsx",package = "RevenueAnalysisR", mustWork = TRUE,full.names = TRUE)
+  rlang::check_installed("readxl", reason = "to use `read_excel`")
+  excel.file<-readxl::read_excel(Source)
+  return(as.data.frame(excel.file))
+  }
+

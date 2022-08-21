@@ -6,7 +6,7 @@
 \title{revenue
 Revenue data}
 \format{
-A table with x rows and y variables
+A table with 202 rows and 12 variables
 \describe{
 \item{price}{price in US dollars (\$326--\$18,823)}
 \item{carat}{weight of the diamond (0.2--5.01)}
