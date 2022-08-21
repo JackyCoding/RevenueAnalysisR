@@ -18,3 +18,22 @@
 
 #' }
 "diamonds"
+
+#' revenue
+#' Revenue data
+#'
+#' A dataset containing the revenue and other attributes of x companies.
+#'
+#' @docType data
+#' @usage data(revenue)
+#' @keywords datasets
+#' @format A table with x rows and y variables
+#' \describe{
+#'   \item{price}{price in US dollars (\$326--\$18,823)}
+#'   \item{carat}{weight of the diamond (0.2--5.01)}
+#'   \item{cut}{quality of the cut (Fair, Good, Very Good, Premium, Ideal)}
+#' }
+#' @source <http://www.fom.de/>
+#' @examples
+#' View(data(revenue))
+"revenue"

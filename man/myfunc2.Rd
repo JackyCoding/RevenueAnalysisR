@@ -13,7 +13,7 @@ myfunc2(W)
 Object of \code{\link{function}} with methods for ...
 }
 \description{
-`myfunc2` returns a function
+\code{myfunc2} returns a function
 }
 \details{
 details

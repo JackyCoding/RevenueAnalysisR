@@ -15,12 +15,12 @@ test(a, b)
 Object of \code{\link{String}} with methods for ...
 }
 \description{
-`test` returns test
+\code{test} returns test
 }
 \details{
 This is a generic function: methods can be defined for it directly
-or via the [Summary()] group generic. For this to work properly,
-the arguments `...` should be unnamed, and dispatch is on the
+or via the \code{\link[=Summary]{Summary()}} group generic. For this to work properly,
+the arguments \code{...} should be unnamed, and dispatch is on the
 first argument.
 }
 \examples{

@@ -7,9 +7,23 @@ Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
+Depends:
+    R (>= 3.0.0)
+Imports: 
+    DBI (>= 1.0.0),
+    readxl (>= 1.0.0),
+    rlang (>= 1.0.0)
+Suggests:
+    RSQLite,
+    knitr,
+    rmarkdown
+URL: https://github.com/JackyCoding/RevenueAnalysisR
+BugReports: https://github.com/JackyCoding/RevenueAnalysisR
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.1
+VignetteBuilder: knitr
 Collate: 
     'data.R'
     'hello.R'
