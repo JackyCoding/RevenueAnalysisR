@@ -38,7 +38,7 @@
   assign('package.name',"RevenueAnalysisR", envir = .GlobalEnv)
 
   cat("connect")
-  #connectDB()
+  connectDB()
   cat("connect complete")
   msg <- paste("Loading", package.name,'\n')
   cat(msg)
