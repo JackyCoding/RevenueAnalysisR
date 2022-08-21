@@ -20,7 +20,6 @@ pkg.env <-NULL
     f = closeConnection,
     onexit = TRUE
   )
-  connectDB()
 
   op <- options()
   op.devtools <- list(
