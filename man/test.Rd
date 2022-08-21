@@ -2,20 +2,28 @@
 % Please edit documentation in R/test.R
 \name{test}
 \alias{test}
-\title{Constructor}
+\title{Test function1}
 \usage{
 test(a, b)
 }
 \arguments{
-\item{provider}{a,b}
+\item{a}{a,a}
+
+\item{b}{b}
 }
 \value{
 Object of \code{\link{String}} with methods for ...
 }
 \description{
-Constructor
+`test` returns test
+}
+\details{
+This is a generic function: methods can be defined for it directly
+or via the [Summary()] group generic. For this to work properly,
+the arguments `...` should be unnamed, and dispatch is on the
+first argument.
 }
 \examples{
-result<-test(a,b)
+result<-test("a",b)
 }
 \keyword{function}
