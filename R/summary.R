@@ -7,6 +7,7 @@
 #' @keywords function
 #' @return Object of \code{\link{dataframe}} with revenue data
 #' @examples df<-summary()
+#' @importFrom magrittr "%>%"
 #' @include zzz.R
 #' @export
 #'
