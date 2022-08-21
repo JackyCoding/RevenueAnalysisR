@@ -36,6 +36,7 @@
     f = closeConnection,
     onexit = TRUE
   )
+
   connectDB()
 
   msg <- paste("Loading", package.name,'\n')

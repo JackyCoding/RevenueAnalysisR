@@ -17,5 +17,3 @@ connectDB <- function(user = Sys.getenv("DB_USERNAME"),
 
   invisible(TRUE)
 }
-
-print(connectDB())
