@@ -10,13 +10,13 @@ connectDB <- function(user = Sys.getenv("DB_USERNAME"),
     cat("in if connect")
     DB_ENV$cnn <- DBI::dbConnect(DB_DRIVER, DB_DBNAME)
     cat("in if connect complete")
-  } else {
+  } #else {
     # Closing the existing connection if already open
     # Can instead ask the user if they want to restablish connection and stop if they don't
-    if (DBI::dbIsValid(DB_ENV$cnn)) {
-      DBI::dbDisconnect(DB_ENV$cnn)
-    }
-    DB_ENV$cnn <- DBI::dbConnect(DB_DRIVER, DB_DBNAME)
-  }
+    #if (DBI::dbIsValid(DB_ENV$cnn)) {
+    #  DBI::dbDisconnect(DB_ENV$cnn)
+    #}
+    #DB_ENV$cnn <- DBI::dbConnect(DB_DRIVER, DB_DBNAME)
+ # }
   invisible(TRUE)
 }
