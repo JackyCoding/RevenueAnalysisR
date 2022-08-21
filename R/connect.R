@@ -16,7 +16,7 @@ connectDB <- function(user = Sys.getenv("DB_USERNAME"),
     if (DBI::dbIsValid(DB_ENV$cnn)) {
       DBI::dbDisconnect(DB_ENV$cnn)
     }
-    #DB_ENV$cnn <- DBI::dbConnect(DB_DRIVER, DB_DBNAME)
+    DB_ENV$cnn <- DBI::dbConnect(DB_DRIVER, DB_DBNAME)
   }
   invisible(TRUE)
 }
