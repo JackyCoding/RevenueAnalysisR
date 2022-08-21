@@ -12,7 +12,10 @@
 
 pkg.env <-NULL
 .onLoad <- function(libname, pkgname) {
-
+  
+  datafile = system.file("extdata", "revenue.db", package = "RevenueAnalysisR")
+  assign('datafile', datafile, envir = .GlobalEnv)
+  
   #db connection
   reg.finalizer(
     e = pkg.db.env,
