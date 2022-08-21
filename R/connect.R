@@ -1,4 +1,26 @@
 
+#' connectDB
+#'
+#' @description
+#' `connectDB` connects to db
+#'
+#' @details
+#' This is a generic function:
+#' @param user user
+#' @param pass pass
+#' @keywords function
+#' @return Object of \code{\link{DBI::Connect}} with methods for ...
+#' @examples result<-connectDB()
+#' @include zzz.R
+#' @export
+#'
+#'
+
+pkg.db.env <- new.env()
+pkg.db.env$driver <- RSQLite::SQLite()
+pkg.db.env$path <- "sysdata/revenue.db"
+
+
 connectDB <- function(user = Sys.getenv("DB_USERNAME"),
                        pass = Sys.getenv("DB_PASSWORD", rstudioapi::askForPassword())) {
 
@@ -14,3 +36,4 @@ connectDB <- function(user = Sys.getenv("DB_USERNAME"),
  # }
   invisible(TRUE)
 }
+

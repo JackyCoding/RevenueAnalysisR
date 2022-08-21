@@ -11,13 +11,8 @@
 }
 
 pkg.env <-NULL
-pkg.db.env <-NULL
 
 .onLoad <- function(libname, pkgname) {
-
-  pkg.db.env <- new.env()
-  pkg.db.env$driver <- RSQLite::SQLite()
-  pkg.db.env$path <- "sysdata/revenue.db"
 
   #db connection
   reg.finalizer(

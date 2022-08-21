@@ -26,10 +26,10 @@ Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
 Collate: 
+    'zzz.R'
     'connect.R'
     'data.R'
     'hello.R'
-    'zzz.R'
     'installer.R'
     'sql.R'
     'summary.R'
