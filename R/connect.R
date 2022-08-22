@@ -34,4 +34,4 @@ connectDB <- function(user = Sys.getenv("DB_USERNAME"),
 
 pkg.db.env <- new.env()
 pkg.db.env$driver <- RSQLite::SQLite()
-pkg.db.env$path <- "extdata/revenue.db"
+pkg.db.env$path <- pkg.env$db
