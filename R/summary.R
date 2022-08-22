@@ -23,8 +23,8 @@ summary <- function(){
     mean=~mean(.x,na.rm=TRUE),
     count=~n()
   )
-
-  df<-tbl %>% dplyr::group_by(Lieferort) %>%
+.data
+  df<-tbl %>% dplyr::group_by(.data$Lieferort) %>%
     dplyr::summarise(across(c(Umsatz_A,Umsatz_B),descriptiveAnalysis,.names = "{.fn}.{.col}"), .groups = 'drop') %>%
     dplyr::arrange(desc(Lieferort),.by_group =TRUE ) %>%
     as.data.frame()
