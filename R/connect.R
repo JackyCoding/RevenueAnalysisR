@@ -25,7 +25,7 @@ connectDB <- function(user = Sys.getenv("DB_USERNAME"),
   e<-pkg.db.env
   print(e$driver)
   print(e$path)
-  file.exists(e$path)
+  print(file.exists(e$path))
   pkg.db.env$cnn <- DBI::dbConnect(drv = pkg.db.env$driver, dbname=pkg.db.env$path)
 
   invisible(TRUE)
