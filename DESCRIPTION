@@ -14,8 +14,7 @@ Imports:
     rlang (>= 1.0.0),
     RSQLite(>= 2.2.4),
     DBI,
-    dplyr (>= 1.0.0),
-    magrittr
+    dplyr (>= 1.0.0)
 Suggests:
     knitr,
     rmarkdown
