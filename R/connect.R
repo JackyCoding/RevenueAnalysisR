@@ -11,6 +11,8 @@
 #' @include zzz.R
 #' @export
 #'
+pkg.db.env <- new.env()
+pkg.db.env$driver <- RSQLite::SQLite()
 connectDB <- function(user = Sys.getenv("DB_USERNAME"),
                        pass = Sys.getenv("DB_PASSWORD", rstudioapi::askForPassword())) {
 
@@ -21,18 +23,9 @@ connectDB <- function(user = Sys.getenv("DB_USERNAME"),
       DBI::dbDisconnect(pkg.db.env$cnn)
     }
   }
-  e<-pkg.db.env
-  print(e$driver)
-  print(pkg.env$db)
-  print(file.exists(pkg.env$db))
-pkg.db.env$cnn <- DBI::dbConnect(drv = pkg.db.env$driver, dbname=pkg.env$db)
+
+  pkg.db.env$cnn <- DBI::dbConnect(drv = RSQLite::SQLite(), dbname=pkg.env$db)
 
   invisible(TRUE)
   #return (pkg.db.env$cnn)
 }
-connectDB()
-
-pkg.db.env <- new.env()
-pkg.db.env$driver <- RSQLite::SQLite()
-pkg.db.env$path <- pkg.env$db
-
