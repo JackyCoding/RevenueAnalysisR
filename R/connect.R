@@ -2,7 +2,6 @@
 #'
 #' @description
 #' `connectDB` connects to db
-#'
 #' @details
 #' This is a generic function:
 #' @param user user

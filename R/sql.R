@@ -2,7 +2,6 @@
 #'
 #' @description
 #' `fetch` returns a dataset
-#'
 #' @details
 #' This is a generic function:
 #' @param sql sql statement

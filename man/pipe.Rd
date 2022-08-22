@@ -17,4 +17,10 @@ The result of calling \code{rhs(lhs)}.
 \description{
 See \code{magrittr::\link[magrittr:pipe]{\%>\%}} for details.
 }
+\examples{
+Instead of
+layer_points(ggvis(mtcars, ~mpg, ~wt))
+# you can write
+mtcars \%>\% ggvis(~mpg, ~wt) \%>\% layer_points()
+}
 \keyword{internal}
