@@ -7,12 +7,12 @@
 #' @keywords function
 #' @return Object of \code{\link{dataframe}} with revenue data
 #' @examples df<-summary()
-#' @importFrom magrittr "%>%"
+#' @importFrom dply "%>%"
+#' @importFrom rlang .data
 #' @include zzz.R
 #' @export
 #'
 summary <- function(){
-
   #cnn <- DBI::dbConnect(RSQLite::SQLite(),"sysdata/revenue.db")
   tbl<-dplyr::tbl(pkg.db.env$cnn,'REVENUE')
 
@@ -30,5 +30,4 @@ summary <- function(){
     as.data.frame()
   #DBI::dbDisconnect(cnn)
   return (df)
-
 }
