@@ -17,8 +17,9 @@ pkg.env <-NULL
   assign('datafile', datafile, envir = .GlobalEnv)
 
   pkg.env<-new.env()
-  pkg.env$datafile<-datafile
-
+  pkg.env$db<-system.file("extdata", "revenue.db", package = "RevenueAnalysisR",mustWork = TRUE)
+  print(pkg.env$db)
+  
   #db connection
   reg.finalizer(
     e = pkg.db.env,
