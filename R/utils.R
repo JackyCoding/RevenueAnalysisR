@@ -13,5 +13,5 @@
 #' @include zzz.R
 #' @export
 fetchAll <- function() {
-  return (fetch("SELECT * FROM REVENUE"))
+  return (RevenueAnalysisR::fetch("SELECT * FROM REVENUE"))
 }
