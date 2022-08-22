@@ -7,7 +7,7 @@
 #' @keywords function
 #' @return Object of \code{\link{dataframe}} with revenue data
 #' @examples df<-summary()
-#' @importFrom dply "%>%"
+#' @importFrom dplyr "%>%"
 #' @importFrom rlang .data
 #' @include zzz.R
 #' @export

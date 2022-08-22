@@ -12,9 +12,10 @@ Depends:
 Imports: 
     readxl (>= 1.0.0),
     rlang (>= 1.0.0),
-    RSQLite(>= 2.2.4),
+    RSQLite (>= 2.2.4),
     DBI,
-    dplyr (>= 1.0.0)
+    dplyr (>= 1.0.0),
+    magrittr
 Suggests:
     knitr,
     rmarkdown
@@ -31,7 +32,9 @@ Collate:
     'data.R'
     'hello.R'
     'installer.R'
+    'revenueanalysisr-package.R'
     'sql.R'
     'summary.R'
     'test.R'
+    'utils-pipe.R'
     'utils.R'
