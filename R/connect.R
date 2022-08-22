@@ -22,7 +22,10 @@ connectDB <- function(user = Sys.getenv("DB_USERNAME"),
       DBI::dbDisconnect(pkg.db.env$cnn)
     }
   }
-  pkg.db.env$cnn <- DBI::dbConnect(pkg.db.env$driver, pkg.db.env$path)
+  e<-pkg.db.env
+  print(e$driver)
+  print(e$path)
+  pkg.db.env$cnn <- DBI::dbConnect(drv = pkg.db.env$driver, dbname=pkg.db.env$path)
 
   invisible(TRUE)
   #return (pkg.db.env$cnn)
